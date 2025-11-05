@@ -13,38 +13,44 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              I’m an <b className="purple">IT Instructor</b> and a{" "}
+              <b className="purple">Web Developer</b> passionate about creating
+              real-world solutions through technology. I love turning ideas into
+              systems that make life easier — from managing cafés to tracking
+              visitors and building SaaS applications.
               <br />
               <br />
-              I’m proficient in
+              I work mainly with
               <i>
                 <b className="purple">
                   {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
+                  Laravel, JavaScript, Node.js, and React{" "}
                 </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
+              — blending backend logic with smooth, responsive frontends.
               <br />
               <br />
-              My key areas of interest include developing
+              Some of my projects include:
               <i>
                 <b className="purple">
                   {" "}
-                  Web Applications, Blockchain Solutions,{" "}
+                  a Apartment Finder SaaS, a Café Management System, and a
+                  Real-Time Visitor Monitoring App (Our capstone project)
                 </b>
               </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              {" "}that use technologies like{" "}
+              <b className="purple">Socket.IO</b> and{" "}
+              <b className="purple">OpenLayers</b> for live data tracking.
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
-              <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
-              </i>
+              I’m also passionate about{" "}
+              <b className="purple">teaching cybersecurity</b> and helping
+              students understand complex concepts in fun, practical ways.
+              <br />
+              <br />
+              Whenever possible, I enjoy experimenting with{" "}
+              <b className="purple">modern web tools</b> and building projects
+              that connect people, data, and innovation.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -57,4 +63,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;

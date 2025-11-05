@@ -1,17 +1,18 @@
 html {
   --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
+    to bottom,
+    #0a192f,
+    #0f2847,
+    #0a1f3f
   );
 
   --image-gradient: linear-gradient(
     to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
+    rgba(10, 25, 47, 0.9),
+    rgba(15, 40, 71, 0.9)
   );
 
-  --imp-text-color: #c770f0;
+  --imp-text-color: #48f1cc;
 }
 
 .purple {
@@ -286,17 +287,17 @@ button:focus {
 }
 
 .main-name {
-  color: #cd5ff8;
+  color: #48f1cc;
 }
 
 .Typewriter__wrapper {
   font-size: 2.2em !important;
-  color: #be6adf !important;
+  color: #48f1cc !important;
   font-weight: 600 !important;
 }
 .Typewriter__cursor {
   font-size: 2.4em !important;
-  color: #b562d6 !important;
+  color: #48f1cc !important;
 }
 
 @media (max-width: 767px) {
@@ -313,6 +314,19 @@ button:focus {
 .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
+}
+
+.img-fluid {
+  filter: drop-shadow(0 0 10px rgba(72, 241, 204, 0.3));
+  transition: all 0.3s ease-in-out;
+  background: radial-gradient(circle at center, rgba(72, 241, 204, 0.1) 0%, transparent 70%);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.img-fluid:hover {
+  filter: drop-shadow(0 0 15px rgba(72, 241, 204, 0.4));
+  transform: translateY(-5px);
 }
 
 @media (max-width: 767px) {

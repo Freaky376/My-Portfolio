@@ -8,37 +8,42 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Soumyajit Behera</span>{" "}
-            from <span className="purple">Bhubaneswar, India</span>.
+            Hi everyone! I’m <span className="purple">Jhon Christian Bucio</span>{" "}
+            from <span className="purple">Malaybalay City, Philippines</span>.
             <br />
-            I’m currently working as a{" "}
-            <span className="purple">Software Developer</span> at{" "}
-            <span className="purple">Juspay</span>.
-            <br />I hold an Integrated M.Sc. (IMSc) in{" "}
-            <span className="purple">Mathematics and Computing</span> from{" "}
-            <span className="purple">BIT Mesra</span>.
+            <br />
+            I’m currently working as an{" "}
+            <span className="purple">IT Instructor</span> at{" "}
+            <span className="purple">STI College Malaybalay</span>. With a background in{" "}
+            <span className="purple">Information Technology</span>, I’m passionate about
+            mentoring students and developing real-world projects in{" "}
+            <span className="purple">Web Development</span>,{" "}
+            <span className="purple">Database Management</span>, and{" "}
+            <span className="purple">Cybersecurity Education</span>.
             <br />
             <br />
             Outside of coding, I love engaging in activities that keep me
-            creative and inspired:
+            creative and inspired.
           </p>
+
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games 🎮
+              <ImPointRight /> Playing Guitar 🎸
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs ✍️
+              <ImPointRight /> Gaming 🎮
             </li>
             <li className="about-activity">
-              <ImPointRight /> Traveling and Exploring New Places 🌍
+              <ImPointRight /> Watching Anime 🍿
             </li>
           </ul>
 
+
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "The obstacle is the way."{" "}
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          <footer className="blockquote-footer">Marcus Aurelius</footer>
         </blockquote>
       </Card.Body>
     </Card>
