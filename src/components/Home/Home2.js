@@ -13,44 +13,40 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m an <b className="purple">IT Instructor</b> and a{" "}
-              <b className="purple">Web Developer</b> passionate about creating
-              real-world solutions through technology. I love turning ideas into
-              systems that make life easier — from managing cafés to tracking
-              visitors and building SaaS applications.
+              I'm a <b className="purple">Full Stack Developer</b> currently
+              working at <b className="purple">Sagelyn AI</b>, where I build
+              AI-powered web applications that solve real problems.
               <br />
               <br />
-              I work mainly with
+              My core stack is{" "}
               <i>
                 <b className="purple">
-                  {" "}
-                  Laravel, JavaScript, Node.js, and React{" "}
+                  Next.js, React, TypeScript, Python, and AWS
                 </b>
-              </i>
-              — blending backend logic with smooth, responsive frontends.
+              </i>{" "}
+              — from serverless Lambda backends and FastAPI services to clean,
+              responsive frontends.
               <br />
               <br />
-              Some of my projects include:
-              <i>
-                <b className="purple">
-                  {" "}
-                  a Apartment Finder SaaS, a Café Management System, and a
-                  Real-Time Visitor Monitoring App (Our capstone project)
-                </b>
-              </i>
-              {" "}that use technologies like{" "}
-              <b className="purple">Socket.IO</b> and{" "}
-              <b className="purple">OpenLayers</b> for live data tracking.
+              A big part of my work involves{" "}
+              <b className="purple">integrating LLMs</b> into production apps
+              using <b className="purple">Amazon Bedrock</b> and{" "}
+              <b className="purple">OpenAI</b> — building AI-assisted workflows,
+              retrieval-augmented chat, and intelligent features that make
+              products genuinely smarter.
               <br />
               <br />
-              I’m also passionate about{" "}
-              <b className="purple">teaching cybersecurity</b> and helping
-              students understand complex concepts in fun, practical ways.
+              I also work with{" "}
+              <b className="purple">GitHub Actions CI/CD</b>, REST APIs,
+              webhooks, and{" "}
+              <b className="purple">AWS infrastructure</b> (Lambda, API Gateway,
+              DynamoDB) to ship and scale everything I build.
               <br />
               <br />
-              Whenever possible, I enjoy experimenting with{" "}
-              <b className="purple">modern web tools</b> and building projects
-              that connect people, data, and innovation.
+              I enjoy figuring things out independently, learning new
+              technologies fast, and using{" "}
+              <b className="purple">AI tools effectively</b> to build products
+              faster and more efficiently.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

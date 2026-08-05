@@ -1,16 +1,16 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import homeLogo from "../../Assets/homelogo.png";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import Techstack from "../About/Techstack";
-import Github from "../About/Github";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
+  AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
+import { CgFileDocument } from "react-icons/cg";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home() {
@@ -35,6 +35,15 @@ function Home() {
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
+              </div>
+
+              <div className="home-cta">
+                <Button as={Link} to="/project" className="btn-primary home-cta-btn">
+                  <AiOutlineFundProjectionScreen /> &nbsp;View My Work
+                </Button>
+                <Button as={Link} to="/resume" className="home-cta-btn home-cta-btn-outline">
+                  <CgFileDocument /> &nbsp;Résumé
+                </Button>
               </div>
             </Col>
 
@@ -64,27 +73,17 @@ function Home() {
                   href="https://github.com/Freaky376"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
               </li>
-              {/* <li className="social-icons">
-                <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li> */}
               <li className="social-icons">
                 <a
-                  href="https://www.linkedin.com/in/me/"
+                  href="https://www.linkedin.com/in/jhon-christian-bucio-199041295/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>

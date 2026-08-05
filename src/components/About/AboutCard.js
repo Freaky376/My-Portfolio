@@ -8,18 +8,17 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Jhon Christian Bucio</span>{" "}
+            Hi everyone! I'm <span className="purple">Jhon Christian Bucio</span>{" "}
             from <span className="purple">Malaybalay City, Philippines</span>.
             <br />
             <br />
-            I’m currently working as an{" "}
-            <span className="purple">IT Instructor</span> at{" "}
-            <span className="purple">STI College Malaybalay</span>. With a background in{" "}
-            <span className="purple">Information Technology</span>, I’m passionate about
-            mentoring students and developing real-world projects in{" "}
-            <span className="purple">Web Development</span>,{" "}
-            <span className="purple">Database Management</span>, and{" "}
-            <span className="purple">Cybersecurity Education</span>.
+            I'm a <span className="purple">Full Stack Developer</span> currently
+            working at <span className="purple">Sagelyn AI</span>, where I build{" "}
+            <span className="purple">AI-powered web applications</span> using
+            Next.js, React, TypeScript, Python, AWS, and Amazon Bedrock/OpenAI.
+            I enjoy learning new technologies, solving challenging problems, and
+            using <span className="purple">AI to build products faster</span> and
+            more efficiently.
             <br />
             <br />
             Outside of coding, I love engaging in activities that keep me
@@ -40,7 +39,7 @@ function AboutCard() {
           </ul>
 
 
-          <p style={{ color: "rgb(155 126 172)" }}>
+          <p style={{ color: "var(--accent)" }}>
             "The obstacle is the way."{" "}
           </p>
           <footer className="blockquote-footer">Marcus Aurelius</footer>
