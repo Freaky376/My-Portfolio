@@ -15,7 +15,7 @@ function Home() {
           <p className="eyebrow">{profile.location}</p>
           <h1 className="hero-name">{profile.name}</h1>
           <p className="hero-title">
-            {profile.title} <span className="muted">· {profile.tagline}</span>
+            {profile.title} <span className="muted">{profile.tagline}</span>
           </p>
           <p className="hero-summary">{profile.summary}</p>
 
@@ -72,8 +72,8 @@ function Home() {
           <div className="card-plain contact-card">
             <h2 className="section-title">Let's work together</h2>
             <p className="muted">
-              Open to conversations about engineering leadership, AI products
-              and full-stack roles.
+              Open to Senior Full-Stack / AI Engineer and founding-engineer
+              roles at seed to Series A startups building AI products.
             </p>
             <a href={`mailto:${profile.email}`} className="btn-accent">
               <AiOutlineMail /> {profile.email}

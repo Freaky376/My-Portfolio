@@ -2,24 +2,24 @@
 
 export const profile = {
   name: "Jhon Christian Bucio",
-  title: "Tech Lead · Full-Stack Engineer",
-  tagline: "AI products on AWS Serverless",
+  title: "Tech Lead shipping AI agent products on AWS Serverless",
+  tagline: "and running an AI-native engineering workflow with Claude Code",
   location: "Malaybalay, Bukidnon, Philippines",
   email: "jhonbucio2002@gmail.com",
   summary:
-    "Tech lead at Sagelyn AI, a multi-tenant AI marketing platform for small businesses. I set technical direction across five repositories (React/TypeScript and four Python services on AWS), plan and review the team's work, and still ship code. Strongest in AI agents on Claude, social platform APIs and OAuth, and multi-tenant security, with a QA background.",
+    "I build AI agents that small businesses actually use. As tech lead at Sagelyn AI, a multi-tenant AI marketing platform serving 80+ businesses, I lead five repositories (React/TypeScript and four Python services on AWS) and still ship code every week. The team runs on an AI-native workflow I built: Claude Code subagents that plan, implement, review and QA every feature.",
   links: {
-    github: "https://github.com/jhonbucio2002",
+    github: "https://github.com/Freaky376",
     linkedin: "https://www.linkedin.com/in/jhon-christian-bucio-199041295/",
     instagram: "https://www.instagram.com/janz_272",
   },
 };
 
 export const highlights = [
-  { value: "5", label: "repositories led" },
-  { value: "16", label: "services integrated" },
+  { value: "80+", label: "businesses on the platform" },
+  { value: "400+", label: "pull requests merged in 8 months" },
+  { value: "270+", label: "security issues caught by my SOC 2 CI" },
   { value: "10+", label: "platform integrations" },
-  { value: "160+", label: "tests added" },
 ];
 
 export const experience = [
@@ -35,16 +35,16 @@ export const experience = [
         period: "Oct 2026 – Present",
         items: [
           {
+            label: "AI-assisted engineering",
+            text: "Built the team's Claude Code workflow: a ship-feature pipeline of planner, implementer, code-reviewer and QA subagents, custom skills that encode our AWS SAM, IAM, backend and Jira conventions, and a codebase knowledge graph connected through MCP to Jira, Slack, GitHub and the browser.",
+          },
+          {
             label: "Technical leadership",
             text: "Own architecture and delivery for the whole product: turn tickets into implementation plans with acceptance criteria, review pull requests across all five repositories, and run the weekly production release.",
           },
           {
             label: "SOC 2 compliance in CI",
-            text: "Designed and rolled out a shared GitHub Actions compliance workflow to every repository (secret scanning, dependency audits, cfn-guard, Semgrep), surfacing hard-coded keys and vulnerable dependencies.",
-          },
-          {
-            label: "AI-assisted engineering",
-            text: "Built the team's Claude Code workflow: a ship-feature pipeline of planner, implementer, code-reviewer and QA subagents, custom skills that encode our AWS SAM, IAM, backend and Jira conventions, and a codebase knowledge graph connected through MCP to Jira, Slack, GitHub and the browser.",
+            text: "Designed and rolled out a shared GitHub Actions compliance workflow to every repository (secret scanning, dependency audits, cfn-guard, Semgrep), surfacing 270+ vulnerable dependencies and 2 live API keys committed to git (both rotated) on its first run.",
           },
         ],
       },
@@ -52,6 +52,10 @@ export const experience = [
         title: "Full-Stack Developer",
         period: "Mar 2026 – Oct 2026",
         items: [
+          {
+            label: "AI Visibility Manager agent",
+            text: "An AI employee that helps local businesses get recommended by ChatGPT, Perplexity and Google: visibility score with GoHighLevel lead capture, Google Business Profile fix cards, Reddit insights, and a hosted SEO blog.",
+          },
           {
             label: "Frontend",
             text: "Primary developer on the React 18 / TypeScript app, consuming 16 services across five repositories.",
@@ -67,10 +71,6 @@ export const experience = [
           {
             label: "Security",
             text: "Led hardening of the social service: tenant checks on every customer-scoped route (IDOR), SSRF-safe fetching, CORS allowlists, KMS-encrypted token storage and log hygiene. Shipped TOTP multi-factor sign-in and expiring review links.",
-          },
-          {
-            label: "AI Visibility Manager agent",
-            text: "An AI employee that helps local businesses get recommended by ChatGPT, Perplexity and Google: visibility score with GoHighLevel lead capture, Google Business Profile fix cards, Reddit insights, and a hosted SEO blog.",
           },
           {
             label: "AI agents and CRM",
