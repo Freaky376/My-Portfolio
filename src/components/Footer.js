@@ -1,53 +1,31 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
+import { Container } from "react-bootstrap";
+import { AiFillGithub, AiFillInstagram, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { profile } from "../data/resume";
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year}</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/Freaky376"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/jhon-christian-bucio-199041295/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/janz_272?igsh=cGh4eHd6aDF4Y2tz&utm_source=qr"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="site-footer">
+      <Container className="narrow footer-inner">
+        <span className="muted">© {year} {profile.name}</span>
+        <div className="footer-icons">
+          <a href={profile.links.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <AiFillGithub />
+          </a>
+          <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <FaLinkedinIn />
+          </a>
+          <a href={profile.links.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <AiFillInstagram />
+          </a>
+          <a href={`mailto:${profile.email}`} aria-label="Email">
+            <AiOutlineMail />
+          </a>
+        </div>
+      </Container>
+    </footer>
   );
 }
 

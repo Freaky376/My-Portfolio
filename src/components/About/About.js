@@ -1,60 +1,53 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
+import { Container } from "react-bootstrap";
 import Github from "./Github";
-import Techstack from "./Techstack";
-import Aboutcard from "./AboutCard";
-import Internship from "./Internship";
-import laptopImg from "../../Assets/about.png";
-import Toolstack from "./Toolstack";
+import { profile, skills, languages, education } from "../../data/resume";
 
 function About() {
   return (
-    <>
-      {" "}
-      <Particle />
-      <Container fluid className="about-section">
-        <Container>
-          <Row style={{ justifyContent: "center", padding: "10px" }}>
-            <Col
-              md={7}
-              style={{
-                justifyContent: "center",
-                paddingTop: "30px",
-                paddingBottom: "50px",
-              }}
-            >
-              <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-                Know Who <strong className="purple">I AM</strong>
-              </h1>
-              <Aboutcard />
-            </Col>
-            <Col
-              md={5}
-              style={{ paddingTop: "120px", paddingBottom: "50px" }}
-              className="about-img"
-            >
-              <img src={laptopImg} alt="about" className="img-fluid" />
-            </Col>
-          </Row>
-            <Internship />
-          <h1 className="project-heading">
-            Professional <strong className="purple">Skillset </strong>
-          </h1>
+    <section className="page">
+      <Container className="narrow">
+        <p className="eyebrow">About</p>
+        <h1 className="page-title">A bit about me</h1>
+        <p className="lead-text">{profile.summary}</p>
+        <p className="muted">
+          Outside of work I play guitar, game, and watch anime. A line I keep
+          coming back to: <em>"The obstacle is the way."</em> (Marcus Aurelius)
+        </p>
 
-          <Techstack />
+        <h2 className="section-title mt-section">Skills</h2>
+        <div className="skills">
+          {skills.map((s) => (
+            <div className="skill-row" key={s.group}>
+              <span className="skill-group">{s.group}</span>
+              <div className="tags">
+                {s.items.map((item) => (
+                  <span className="tag" key={item}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div className="skill-row">
+            <span className="skill-group">Languages</span>
+            <span className="muted">{languages}</span>
+          </div>
+        </div>
 
-          <h1 className="project-heading">
-            <strong className="purple">Tools</strong> I use
-          </h1>
-          <Toolstack />
+        <h2 className="section-title mt-section">Education</h2>
+        <div className="card-plain">
+          <div className="job-header">
+            <h3 className="job-company">{education.degree}</h3>
+            <span className="job-period">{education.period}</span>
+          </div>
+          <p className="job-about">{education.school}</p>
+          <p className="muted mb-0">{education.note}</p>
+        </div>
 
-         
-
-          <Github />
-        </Container>
+        <Github />
       </Container>
-    </>
+    </section>
   );
 }
 

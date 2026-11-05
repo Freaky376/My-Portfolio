@@ -1,108 +1,87 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import homeLogo from "../../Assets/homelogo.png";
-import Particle from "../Particle";
-import Home2 from "./Home2";
-import Type from "./Type";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-  AiOutlineFundProjectionScreen,
-} from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
+import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { HiArrowRight } from "react-icons/hi";
+import Timeline from "../Experience/Timeline";
+import { profile, highlights } from "../../data/resume";
 
 function Home() {
   return (
-    <section>
-      <Container fluid className="home-section" id="home">
-        <Particle />
-        <Container className="home-content">
-          <Row>
-            <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
+    <>
+      <section className="hero">
+        <Container className="narrow">
+          <p className="eyebrow">{profile.location}</p>
+          <h1 className="hero-name">{profile.name}</h1>
+          <p className="hero-title">
+            {profile.title} <span className="muted">· {profile.tagline}</span>
+          </p>
+          <p className="hero-summary">{profile.summary}</p>
 
-              <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> JHON CHRISTIAN BUCIO </strong>
-              </h1>
+          <div className="hero-actions">
+            <Link to="/experience" className="btn-accent">
+              View experience <HiArrowRight />
+            </Link>
+            <Link to="/resume" className="btn-ghost">
+              Résumé
+            </Link>
+          </div>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div>
-
-              <div className="home-cta">
-                <Button as={Link} to="/project" className="btn-primary home-cta-btn">
-                  <AiOutlineFundProjectionScreen /> &nbsp;View My Work
-                </Button>
-                <Button as={Link} to="/resume" className="home-cta-btn home-cta-btn-outline">
-                  <CgFileDocument /> &nbsp;Résumé
-                </Button>
-              </div>
-            </Col>
-
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
-            </Col>
-          </Row>
+          <div className="hero-links">
+            <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+              <AiFillGithub />
+            </a>
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn />
+            </a>
+            <a href={`mailto:${profile.email}`} aria-label="Email">
+              <AiOutlineMail />
+            </a>
+          </div>
         </Container>
-      </Container>
-      <Home2 />
+      </section>
 
-      <Container>
-        <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
-          <Col md={12} className="home-about-social">
-            <h1>Find Me On</h1>
-            <p>
-              Feel free to <span className="purple">connect </span>with me
+      <section className="section">
+        <Container className="narrow">
+          <div className="stats">
+            {highlights.map((h) => (
+              <div className="stat" key={h.label}>
+                <span className="stat-value">{h.value}</span>
+                <span className="stat-label">{h.label}</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="section">
+        <Container className="narrow">
+          <div className="section-head">
+            <h2 className="section-title">Experience</h2>
+            <Link to="/experience" className="text-link">
+              Full details <HiArrowRight />
+            </Link>
+          </div>
+          <Timeline compact />
+        </Container>
+      </section>
+
+      <section className="section">
+        <Container className="narrow">
+          <div className="card-plain contact-card">
+            <h2 className="section-title">Let's work together</h2>
+            <p className="muted">
+              Open to conversations about engineering leadership, AI products
+              and full-stack roles.
             </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/Freaky376"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/jhon-christian-bucio-199041295/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/janz_272?igsh=cGh4eHd6aDF4Y2tz&utm_source=qr"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+            <a href={`mailto:${profile.email}`} className="btn-accent">
+              <AiOutlineMail /> {profile.email}
+            </a>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }
 

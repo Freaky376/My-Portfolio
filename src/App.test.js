@@ -1,8 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock('react-github-calendar', () => () => null);
+jest.mock('react-pdf', () => ({ Document: () => null, Page: () => null, pdfjs: { GlobalWorkerOptions: {} } }));
+
+test('renders name and experience on home', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /jhon christian bucio/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /sagelyn ai/i })).toBeInTheDocument();
 });

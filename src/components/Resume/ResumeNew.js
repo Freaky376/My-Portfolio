@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import Particle from "../Particle";
-import pdf from "../../Assets/../Assets/jhon_christian_resume.pdf";
+import { Container } from "react-bootstrap";
+import pdf from "../../Assets/jhon_christian_resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -12,44 +10,31 @@ function ResumeNew() {
   const [width, setWidth] = useState(1200);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
+    const onResize = () => setWidth(window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
-    <div>
-      <Container fluid className="resume-section">
-        <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
-
-        <Row className="resume">
-          <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+    <section className="page">
+      <Container className="narrow">
+        <div className="section-head">
+          <div>
+            <p className="eyebrow">Résumé</p>
+            <h1 className="page-title mb-0">One page, everything</h1>
+          </div>
+          <a href={pdf} target="_blank" rel="noreferrer" className="btn-accent">
+            <AiOutlineDownload /> Download PDF
+          </a>
+        </div>
+        <div className="resume-frame">
+          <Document file={pdf}>
+            <Page pageNumber={1} width={Math.min(width - 48, 820)} />
           </Document>
-        </Row>
-
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        </div>
       </Container>
-    </div>
+    </section>
   );
 }
 
