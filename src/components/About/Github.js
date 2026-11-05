@@ -6,7 +6,7 @@ function Github() {
     <div className="github-calendar">
       <h2 className="section-title mt-section">GitHub activity</h2>
       <GitHubCalendar
-        username="Freaky376"
+        username="jhonbucio2002"
         blockSize={12}
         blockMargin={4}
         fontSize={14}
