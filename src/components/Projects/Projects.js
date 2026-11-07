@@ -64,8 +64,8 @@ function Projects() {
           </p>
         </div>
         <div className="project-grid">
-          {projects.map((p) => (
-            <ProjectCard key={p.title} {...p} />
+          {projects.map((p, i) => (
+            <ProjectCard key={p.title} delay={i * 60} {...p} />
           ))}
         </div>
       </Container>

@@ -1,13 +1,12 @@
 import React from "react";
 import { experience } from "../../data/resume";
-import Achievement from "../../Assets/Internship/Achievement.png";
-import Completion from "../../Assets/Internship/Completion.png";
+import Reveal from "../Reveal";
 
 function Timeline({ compact = false }) {
   return (
     <ol className="timeline">
-      {experience.map((job) => (
-        <li className="timeline-item" key={job.company}>
+      {experience.map((job, index) => (
+        <Reveal as="li" className="timeline-item" delay={index * 60} key={job.company}>
           <div className="timeline-dot" />
           <div className="card-plain">
             <div className="job-header">
@@ -51,18 +50,16 @@ function Timeline({ compact = false }) {
 
             {job.certificates && !compact && (
               <div className="certificates">
-                <figure>
-                  <img src={Achievement} alt="Certificate of Achievement" />
-                  <figcaption>Certificate of Achievement</figcaption>
-                </figure>
-                <figure>
-                  <img src={Completion} alt="Certificate of Completion" />
-                  <figcaption>Certificate of Completion</figcaption>
-                </figure>
+                {job.certificates.map((cert) => (
+                  <figure key={cert.caption}>
+                    <img src={cert.image} alt={cert.alt || cert.caption} />
+                    <figcaption>{cert.caption}</figcaption>
+                  </figure>
+                ))}
               </div>
             )}
           </div>
-        </li>
+        </Reveal>
       ))}
     </ol>
   );

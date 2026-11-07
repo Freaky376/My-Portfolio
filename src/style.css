@@ -597,3 +597,312 @@ a {
     padding-top: 0.75rem;
   }
 }
+
+/* --------- Motion --------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes drift-1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-70px, 50px);
+  }
+}
+
+@keyframes drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(60px, -40px);
+  }
+}
+
+/* Hero background: dotted grid + drifting glow orbs */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(226, 232, 240, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 50% 35%, #000 25%, transparent 72%);
+  pointer-events: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-orb-1 {
+  width: 440px;
+  height: 440px;
+  top: -140px;
+  right: -60px;
+  background: var(--accent);
+  opacity: 0.18;
+  animation: drift-1 18s ease-in-out infinite;
+}
+
+.hero-orb-2 {
+  width: 380px;
+  height: 380px;
+  bottom: -160px;
+  left: -140px;
+  background: #6366f1;
+  opacity: 0.28;
+  animation: drift-2 22s ease-in-out infinite;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Staggered entrance for the hero copy */
+.hero-text > * {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-text > :nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.hero-text > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.hero-text > :nth-child(3) {
+  animation-delay: 0.19s;
+}
+
+.hero-text > :nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.hero-text > :nth-child(5) {
+  animation-delay: 0.33s;
+}
+
+.hero-text > :nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+.hero-text > :nth-child(7) {
+  animation-delay: 0.47s;
+}
+
+/* A slow sheen sweeping across the name */
+.hero-text > .hero-name {
+  background: linear-gradient(
+    100deg,
+    var(--text) 0%,
+    var(--text) 38%,
+    var(--accent) 50%,
+    var(--text) 62%,
+    var(--text) 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.12s both,
+    shine 7s linear 1s infinite;
+}
+
+/* Typewriter line */
+.hero-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 1.6em;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-type-prompt {
+  color: var(--accent);
+}
+
+.hero-type-prompt::before {
+  content: "> ";
+  color: var(--muted);
+}
+
+.hero-type .Typewriter__cursor {
+  color: var(--accent);
+}
+
+/* Photo with a rotating accent ring and soft glow */
+.hero-photo-wrap {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
+  animation: pop 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s both;
+}
+
+.hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent),
+    transparent 30%,
+    #6366f1 50%,
+    transparent 70%,
+    var(--accent)
+  );
+  animation: spin 10s linear infinite;
+}
+
+.hero-photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.22), transparent 65%);
+  z-index: -1;
+}
+
+.hero-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg);
+}
+
+/* Scroll reveal (see components/Reveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Page headers slide in */
+.page .eyebrow,
+.page .page-title,
+.page .lead-text {
+  animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.page .page-title {
+  animation-delay: 0.08s;
+}
+
+.page .lead-text {
+  animation-delay: 0.16s;
+}
+
+/* Button glow on hover (no transforms) */
+.btn-accent {
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-accent:hover {
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.18), 0 10px 28px rgba(var(--accent-rgb), 0.25);
+}
+
+@media (max-width: 767px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-photo-wrap {
+    width: 150px;
+    height: 150px;
+    order: -1;
+  }
+
+  .hero-orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-orb-2 {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text > *,
+  .hero-text > .hero-name,
+  .hero-photo-wrap,
+  .hero-photo-wrap::before,
+  .hero-orb,
+  .page .eyebrow,
+  .page .page-title,
+  .page .lead-text {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,9 +1,10 @@
 import React from "react";
 import { BsGithub } from "react-icons/bs";
+import Reveal from "../Reveal";
 
-function ProjectCards({ imgPath, title, description, tags = [], ghLink }) {
+function ProjectCards({ imgPath, title, description, tags = [], ghLink, delay = 0 }) {
   return (
-    <article className="project-card card-plain">
+    <Reveal as="article" className="project-card card-plain" delay={delay}>
       <img src={imgPath} alt={title} className="project-img" />
       <h3 className="project-title">{title}</h3>
       <p className="muted">{description}</p>
@@ -17,7 +18,7 @@ function ProjectCards({ imgPath, title, description, tags = [], ghLink }) {
       <a href={ghLink} target="_blank" rel="noreferrer" className="text-link project-link">
         <BsGithub /> View code
       </a>
-    </article>
+    </Reveal>
   );
 }
 

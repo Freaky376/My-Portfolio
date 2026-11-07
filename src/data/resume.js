@@ -1,9 +1,21 @@
 // Single source of truth for portfolio content, kept in sync with the PDF resume.
 
+import InternshipAchievement from "../Assets/Internship/Achievement.png";
+import InternshipCompletion from "../Assets/Internship/Completion.png";
+import SagelynTechnicalLead from "../Assets/Sagelyn/TechnicalLead.png";
+import ProfilePhoto from "../Assets/profile.jpg";
+
 export const profile = {
   name: "Jhon Christian Bucio",
+  photo: ProfilePhoto,
   title: "Tech Lead shipping AI agent products on AWS Serverless",
   tagline: "and running an AI-native engineering workflow with Claude Code",
+  builds: [
+    "AI agents that small businesses actually use",
+    "serverless backends on AWS Lambda",
+    "React and TypeScript frontends",
+    "AI-native engineering workflows with Claude Code",
+  ],
   location: "Malaybalay, Bukidnon, Philippines",
   email: "jhonbucio2002@gmail.com",
   summary:
@@ -94,6 +106,13 @@ export const experience = [
       "OAuth 2.0",
       "GitHub Actions",
     ],
+    certificates: [
+      {
+        image: SagelynTechnicalLead,
+        caption: "Technical Lead appointment · effective 1 Oct 2026",
+        alt: "Sagelyn letter appointing Jhon Christian Bucio as Technical Lead, effective 1 October 2026",
+      },
+    ],
   },
   {
     company: "CyTech International",
@@ -145,7 +164,10 @@ export const experience = [
       },
     ],
     stack: ["Networking", "Nginx", "AWS", "Firewalls", "Zabbix"],
-    certificates: true,
+    certificates: [
+      { image: InternshipAchievement, caption: "Certificate of Achievement" },
+      { image: InternshipCompletion, caption: "Certificate of Completion" },
+    ],
   },
   {
     company: "Freelance & Contract Developer",
